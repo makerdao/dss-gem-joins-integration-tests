@@ -566,16 +566,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(aaveJoin));
 
         aave.approve(address(aaveJoin), uint256(-1));
-        assertEq(aave.balanceOf(address(this)), 100 * 10**18);
+        assertEq(aave.balanceOf(address(this)), 100 * WAD);
         assertEq(aave.balanceOf(address(aaveJoin)), 0);
         assertEq(vat.gem("AAVE", address(this)), 0);
-        aaveJoin.join(address(this), 10 * 10**18);
-        assertEq(aave.balanceOf(address(aaveJoin)), 10 * 10**18);
-        assertEq(vat.gem("AAVE", address(this)), 10 * 10**18);
-        aaveJoin.exit(address(this), 4 * 10**18);
-        assertEq(aave.balanceOf(address(this)), 94 * 10**18);
-        assertEq(aave.balanceOf(address(aaveJoin)), 6 * 10**18);
-        assertEq(vat.gem("AAVE", address(this)), 6 * 10**18);
+        aaveJoin.join(address(this), 10 * WAD);
+        assertEq(aave.balanceOf(address(aaveJoin)), 10 * WAD);
+        assertEq(vat.gem("AAVE", address(this)), 10 * WAD);
+        aaveJoin.exit(address(this), 4 * WAD);
+        assertEq(aave.balanceOf(address(this)), 94 * WAD);
+        assertEq(aave.balanceOf(address(aaveJoin)), 6 * WAD);
+        assertEq(vat.gem("AAVE", address(this)), 6 * WAD);
     }
 
     function testGemJoin_MATIC() public {
@@ -585,16 +585,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(maticJoin));
 
         matic.approve(address(maticJoin), uint256(-1));
-        assertEq(matic.balanceOf(address(this)), 100 * 10**18);
+        assertEq(matic.balanceOf(address(this)), 100 * WAD);
         assertEq(matic.balanceOf(address(maticJoin)), 0);
         assertEq(vat.gem("MATIC", address(this)), 0);
-        maticJoin.join(address(this), 10 * 10**18);
-        assertEq(matic.balanceOf(address(maticJoin)), 10 * 10**18);
-        assertEq(vat.gem("MATIC", address(this)), 10 * 10**18);
-        maticJoin.exit(address(this), 4 * 10**18);
-        assertEq(matic.balanceOf(address(this)), 94 * 10**18);
-        assertEq(matic.balanceOf(address(maticJoin)), 6 * 10**18);
-        assertEq(vat.gem("MATIC", address(this)), 6 * 10**18);
+        maticJoin.join(address(this), 10 * WAD);
+        assertEq(matic.balanceOf(address(maticJoin)), 10 * WAD);
+        assertEq(vat.gem("MATIC", address(this)), 10 * WAD);
+        maticJoin.exit(address(this), 4 * WAD);
+        assertEq(matic.balanceOf(address(this)), 94 * WAD);
+        assertEq(matic.balanceOf(address(maticJoin)), 6 * WAD);
+        assertEq(vat.gem("MATIC", address(this)), 6 * WAD);
     }
 
     function testGemJoin_LRC() public {
@@ -703,12 +703,12 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(paxgJoin));
 
         paxg.approve(address(paxgJoin), uint256(-1));
-        assertEq(paxg.balanceOf(address(this)), 100 * 10 ** 18);
+        assertEq(paxg.balanceOf(address(this)), 100 * WAD);
         assertEq(paxg.balanceOf(address(paxgJoin)), 0);
         assertEq(vat.gem("PAXG", address(this)), 0);
-        paxgJoin.join(address(this), 10 * 10 ** 18);
+        paxgJoin.join(address(this), 10 * WAD);
         uint256 prevBalanceThis = paxg.balanceOf(address(this));
-        uint256 netAmt = 10 * 10 ** 18 - getFeeFor(10 * 10**18);
+        uint256 netAmt = 10 * WAD - getFeeFor(10 * WAD);
         uint256 netAmt2 = netAmt - getFeeFor(netAmt);
         assertEq(paxg.balanceOf(address(paxgJoin)), netAmt);
         assertEq(vat.gem("PAXG", address(this)), netAmt);
@@ -921,7 +921,7 @@ contract GemJoinTest is DSTest {
     }
 
     function testFailGemJoin9JoinWad() public {
-        giveTokens(address(paxg), 100 * 10 ** 18);
+        giveTokens(address(paxg), 100 * WAD);
         GemJoin9 paxgJoin = new GemJoin9(address(vat), "PAXG", address(paxg));
         giveAuth(address(vat), address(paxgJoin));
 
@@ -931,34 +931,34 @@ contract GemJoinTest is DSTest {
     }
 
     function testFailGemJoin9ExitWad() public {
-        giveTokens(address(paxg), 100 * 10 ** 18);
+        giveTokens(address(paxg), 100 * WAD);
         GemJoin9 paxgJoin = new GemJoin9(address(vat), "PAXG", address(paxg));
         giveAuth(address(vat), address(paxgJoin));
 
         paxg.approve(address(paxgJoin), uint256(-1));
-        paxgJoin.join(address(this), 10 * 10 ** 18);
+        paxgJoin.join(address(this), 10 * WAD);
         // Fail here
         paxgJoin.exit(address(this), 100 * WAD);
     }
 
     function testGemJoin9JoinFee() public {
-        giveTokens(address(paxg), 100 * 10 ** 18);
+        giveTokens(address(paxg), 100 * WAD);
         GemJoin9 paxgJoin = new GemJoin9(address(vat), "PAXG", address(paxg));
         giveAuth(address(vat), address(paxgJoin));
 
         paxg.approve(address(paxgJoin), uint256(-1));
-        assertEq(paxg.balanceOf(address(this)), 100 * 10 ** 18);
+        assertEq(paxg.balanceOf(address(this)), 100 * WAD);
         assertEq(paxg.balanceOf(address(paxgJoin)), 0);
         assertEq(vat.gem("PAXG", address(this)), 0);
         uint256 prevRecipientBalance = paxg.balanceOf(paxg.feeRecipient());
-        uint256 netAmt = 100 * 10 ** 18 - getFeeFor(100 * 10**18);
+        uint256 netAmt = 100 * WAD - getFeeFor(100 * WAD);
         uint256 netAmt2 = netAmt - getFeeFor(netAmt);
-        paxgJoin.join(address(this), 100 * 10 ** 18);
+        paxgJoin.join(address(this), 100 * WAD);
         assertEq(paxg.balanceOf(address(this)), 0);
         assertEq(paxg.balanceOf(address(paxgJoin)), netAmt);
         assertEq(paxgJoin.total(), paxg.balanceOf(address(paxgJoin)));
         assertEq(vat.gem("PAXG", address(this)), netAmt);
-        assertEq(paxg.balanceOf(paxg.feeRecipient()), prevRecipientBalance + getFeeFor(100 * 10**18));
+        assertEq(paxg.balanceOf(paxg.feeRecipient()), prevRecipientBalance + getFeeFor(100 * WAD));
         prevRecipientBalance = paxg.balanceOf(paxg.feeRecipient());
         paxgJoin.exit(address(this), netAmt);
         assertEq(paxg.balanceOf(address(this)), netAmt2);
@@ -969,36 +969,36 @@ contract GemJoinTest is DSTest {
     }
 
     function testFailGemJoin9JoinFee() public {
-        giveTokens(address(paxg), 100 * 10 ** 18);
+        giveTokens(address(paxg), 100 * WAD);
         GemJoin9 paxgJoin = new GemJoin9(address(vat), "PAXG", address(paxg));
         giveAuth(address(vat), address(paxgJoin));
 
         paxg.approve(address(paxgJoin), uint256(-1));
-        assertEq(paxg.balanceOf(address(this)), 100 * 10 ** 18);
+        assertEq(paxg.balanceOf(address(this)), 100 * WAD);
         assertEq(paxg.balanceOf(address(paxgJoin)), 0);
         assertEq(vat.gem("PAXG", address(this)), 0);
-        paxgJoin.join(address(this), 100 * 10 ** 18);
+        paxgJoin.join(address(this), 100 * WAD);
         // Fail here
-        paxgJoin.exit(address(this), 100 * 10 ** 18);
+        paxgJoin.exit(address(this), 100 * WAD);
     }
 
     function testGemJoin9JoinDirectFee() public {
-        giveTokens(address(paxg), 100 * 10 ** 18);
+        giveTokens(address(paxg), 100 * WAD);
         GemJoin9 paxgJoin = new GemJoin9(address(vat), "PAXG", address(paxg));
         giveAuth(address(vat), address(paxgJoin));
 
-        assertEq(paxg.balanceOf(address(this)), 100 * 10 ** 18);
+        assertEq(paxg.balanceOf(address(this)), 100 * WAD);
         assertEq(paxg.balanceOf(address(paxgJoin)), 0);
         assertEq(vat.gem("PAXG", address(this)), 0);
         uint256 prevRecipientBalance = paxg.balanceOf(paxg.feeRecipient());
-        uint256 netAmt = 100 * 10 ** 18 - getFeeFor(100 * 10**18);
+        uint256 netAmt = 100 * WAD - getFeeFor(100 * WAD);
         uint256 netAmt2 = netAmt - getFeeFor(netAmt);
-        paxg.transfer(address(paxgJoin), 100 * 10 ** 18);
+        paxg.transfer(address(paxgJoin), 100 * WAD);
         paxgJoin.join(address(this));
         assertEq(paxg.balanceOf(address(this)), 0);
         assertEq(paxg.balanceOf(address(paxgJoin)), netAmt);
         assertEq(vat.gem("PAXG", address(this)), netAmt);
-        assertEq(paxg.balanceOf(paxg.feeRecipient()), prevRecipientBalance + getFeeFor(100 * 10**18));
+        assertEq(paxg.balanceOf(paxg.feeRecipient()), prevRecipientBalance + getFeeFor(100 * WAD));
         assertEq(paxgJoin.total(), paxg.balanceOf(address(paxgJoin)));
         prevRecipientBalance = paxg.balanceOf(paxg.feeRecipient());
         paxgJoin.exit(address(this), netAmt);
@@ -1137,15 +1137,15 @@ contract GemJoinTest is DSTest {
     }
 
     function testFailJoinAfterCageGemJoin9() public {
-        giveTokens(address(paxg), 100 * 10 ** 18);
+        giveTokens(address(paxg), 100 * WAD);
         GemJoin9 paxgJoin = new GemJoin9(address(vat), "PAXG", address(paxg));
         giveAuth(address(vat), address(paxgJoin));
 
         paxg.approve(address(paxgJoin), uint256(-1));
-        paxgJoin.join(address(this), 100 * 10 ** 18);
+        paxgJoin.join(address(this), 100 * WAD);
         paxgJoin.cage();
         // Fail here
-        paxgJoin.join(address(this), 100 * 10 ** 18);
+        paxgJoin.join(address(this), 100 * WAD);
     }
 
     function testFailJoinAfterCageAuthGemJoin() public {
@@ -1209,10 +1209,10 @@ contract GemJoinTest is DSTest {
         assertEq(vat.gem("WBTC", address(this)), 0);
         wbtcJoin.join(address(this), 10 * 10 ** 8);
         assertEq(wbtc.balanceOf(address(wbtcJoin)), 10 * 10 ** 8);
-        assertEq(vat.gem("WBTC", address(this)), 10 * 10 ** 18);
+        assertEq(vat.gem("WBTC", address(this)), 10 * WAD);
         wbtcJoin.exit(address(this), address(this), 4 * 10 ** 8);
         assertEq(wbtc.balanceOf(address(wbtcJoin)), 6 * 10 ** 8);
-        assertEq(vat.gem("WBTC", address(this)), 6 * 10 ** 18);
+        assertEq(vat.gem("WBTC", address(this)), 6 * WAD);
         assertEq(wbtc.balanceOf(address(this)), 94 * 10 ** 8);
     }
 
