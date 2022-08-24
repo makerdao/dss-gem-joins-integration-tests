@@ -280,16 +280,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(repJoin));
 
         rep.approve(address(repJoin), uint256(-1));
-        assertEq(rep.balanceOf(address(this)), 100 ether);
+        assertEq(rep.balanceOf(address(this)), 100 * WAD);
         assertEq(rep.balanceOf(address(repJoin)), 0);
         assertEq(vat.gem("REP", address(this)), 0);
-        repJoin.join(address(this), 10 ether);
-        assertEq(rep.balanceOf(address(repJoin)), 10 ether);
-        assertEq(vat.gem("REP", address(this)), 10 ether);
-        repJoin.exit(address(this), 4 ether);
-        assertEq(rep.balanceOf(address(this)), 94 ether);
-        assertEq(rep.balanceOf(address(repJoin)), 6 ether);
-        assertEq(vat.gem("REP", address(this)), 6 ether);
+        repJoin.join(address(this), 10 * WAD);
+        assertEq(rep.balanceOf(address(repJoin)), 10 * WAD);
+        assertEq(vat.gem("REP", address(this)), 10 * WAD);
+        repJoin.exit(address(this), 4 * WAD);
+        assertEq(rep.balanceOf(address(this)), 94 * WAD);
+        assertEq(rep.balanceOf(address(repJoin)), 6 * WAD);
+        assertEq(vat.gem("REP", address(this)), 6 * WAD);
     }
 
     function testGemJoin_ZRX() public {
@@ -299,16 +299,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(zrxJoin));
 
         zrx.approve(address(zrxJoin), uint256(-1));
-        assertEq(zrx.balanceOf(address(this)), 100 ether);
+        assertEq(zrx.balanceOf(address(this)), 100 * WAD);
         assertEq(zrx.balanceOf(address(zrxJoin)), 0);
         assertEq(vat.gem("ZRX", address(this)), 0);
-        zrxJoin.join(address(this), 10 ether);
-        assertEq(zrx.balanceOf(address(zrxJoin)), 10 ether);
-        assertEq(vat.gem("ZRX", address(this)), 10 ether);
-        zrxJoin.exit(address(this), 4 ether);
-        assertEq(zrx.balanceOf(address(this)), 94 ether);
-        assertEq(zrx.balanceOf(address(zrxJoin)), 6 ether);
-        assertEq(vat.gem("ZRX", address(this)), 6 ether);
+        zrxJoin.join(address(this), 10 * WAD);
+        assertEq(zrx.balanceOf(address(zrxJoin)), 10 * WAD);
+        assertEq(vat.gem("ZRX", address(this)), 10 * WAD);
+        zrxJoin.exit(address(this), 4 * WAD);
+        assertEq(zrx.balanceOf(address(this)), 94 * WAD);
+        assertEq(zrx.balanceOf(address(zrxJoin)), 6 * WAD);
+        assertEq(vat.gem("ZRX", address(this)), 6 * WAD);
     }
 
     function testGemJoin2_OMG() public {
@@ -318,16 +318,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(omgJoin));
 
         omg.approve(address(omgJoin), uint256(-1));
-        assertEq(omg.balanceOf(address(this)), 100 ether);
+        assertEq(omg.balanceOf(address(this)), 100 * WAD);
         assertEq(omg.balanceOf(address(omgJoin)), 0);
         assertEq(vat.gem("OMG", address(this)), 0);
-        omgJoin.join(address(this), 10 ether);
-        assertEq(omg.balanceOf(address(omgJoin)), 10 ether);
-        assertEq(vat.gem("OMG", address(this)), 10 ether);
-        omgJoin.exit(address(this), 4 ether);
-        assertEq(omg.balanceOf(address(this)), 94 ether);
-        assertEq(omg.balanceOf(address(omgJoin)), 6 ether);
-        assertEq(vat.gem("OMG", address(this)), 6 ether);
+        omgJoin.join(address(this), 10 * WAD);
+        assertEq(omg.balanceOf(address(omgJoin)), 10 * WAD);
+        assertEq(vat.gem("OMG", address(this)), 10 * WAD);
+        omgJoin.exit(address(this), 4 * WAD);
+        assertEq(omg.balanceOf(address(this)), 94 * WAD);
+        assertEq(omg.balanceOf(address(omgJoin)), 6 * WAD);
+        assertEq(vat.gem("OMG", address(this)), 6 * WAD);
     }
 
     function testGemJoin_BAT() public {
@@ -337,16 +337,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(batJoin));
 
         bat.approve(address(batJoin), uint256(-1));
-        assertEq(bat.balanceOf(address(this)), 100 ether);
+        assertEq(bat.balanceOf(address(this)), 100 * WAD);
         assertEq(bat.balanceOf(address(batJoin)), 0);
         assertEq(vat.gem("BAT", address(this)), 0);
-        batJoin.join(address(this), 10 ether);
-        assertEq(bat.balanceOf(address(batJoin)), 10 ether);
-        assertEq(vat.gem("BAT", address(this)), 10 ether);
-        batJoin.exit(address(this), 4 ether);
-        assertEq(bat.balanceOf(address(this)), 94 ether);
-        assertEq(bat.balanceOf(address(batJoin)), 6 ether);
-        assertEq(vat.gem("BAT", address(this)), 6 ether);
+        batJoin.join(address(this), 10 * WAD);
+        assertEq(bat.balanceOf(address(batJoin)), 10 * WAD);
+        assertEq(vat.gem("BAT", address(this)), 10 * WAD);
+        batJoin.exit(address(this), 4 * WAD);
+        assertEq(bat.balanceOf(address(this)), 94 * WAD);
+        assertEq(bat.balanceOf(address(batJoin)), 6 * WAD);
+        assertEq(vat.gem("BAT", address(this)), 6 * WAD);
     }
 
     function testGemJoin3_DGD() public {
@@ -361,11 +361,11 @@ contract GemJoinTest is DSTest {
         assertEq(vat.gem("DGD", address(this)), 0);
         dgdJoin.join(address(this), 10 * 10 ** 9);
         assertEq(dgd.balanceOf(address(dgdJoin)), 10 * 10 ** 9);
-        assertEq(vat.gem("DGD", address(this)), 10 ether);
+        assertEq(vat.gem("DGD", address(this)), 10 * WAD);
         dgdJoin.exit(address(this), 4 * 10 ** 9);
         assertEq(dgd.balanceOf(address(this)), 94 * 10 ** 9);
         assertEq(dgd.balanceOf(address(dgdJoin)), 6 * 10 ** 9);
-        assertEq(vat.gem("DGD", address(this)), 6 ether);
+        assertEq(vat.gem("DGD", address(this)), 6 * WAD);
     }
 
     function testGemJoin4_GNT() public {
@@ -374,18 +374,18 @@ contract GemJoinTest is DSTest {
         assertEq(gntJoin.dec(), 18);
         giveAuth(address(vat), address(gntJoin));
 
-        assertEq(gnt.balanceOf(address(this)), 100 ether);
+        assertEq(gnt.balanceOf(address(this)), 100 * WAD);
         assertEq(gnt.balanceOf(address(gntJoin)), 0);
         assertEq(vat.gem("GNT", address(this)), 0);
         address bag = gntJoin.make();
-        gnt.transfer(bag, 10 ether);
-        gntJoin.join(address(this), 10 ether);
-        assertEq(gnt.balanceOf(address(gntJoin)), 10 ether);
-        assertEq(vat.gem("GNT", address(this)), 10 ether);
-        gntJoin.exit(address(this), 4 ether);
-        assertEq(gnt.balanceOf(address(this)), 94 ether);
-        assertEq(gnt.balanceOf(address(gntJoin)), 6 ether);
-        assertEq(vat.gem("GNT", address(this)), 6 ether);
+        gnt.transfer(bag, 10 * WAD);
+        gntJoin.join(address(this), 10 * WAD);
+        assertEq(gnt.balanceOf(address(gntJoin)), 10 * WAD);
+        assertEq(vat.gem("GNT", address(this)), 10 * WAD);
+        gntJoin.exit(address(this), 4 * WAD);
+        assertEq(gnt.balanceOf(address(this)), 94 * WAD);
+        assertEq(gnt.balanceOf(address(gntJoin)), 6 * WAD);
+        assertEq(vat.gem("GNT", address(this)), 6 * WAD);
     }
 
     function testGemJoin5_USDC() public {
@@ -400,11 +400,11 @@ contract GemJoinTest is DSTest {
         assertEq(vat.gem("USDC", address(this)), 0);
         usdcJoin.join(address(this), 10 * 10 ** 6);
         assertEq(usdc.balanceOf(address(usdcJoin)), 10 * 10 ** 6);
-        assertEq(vat.gem("USDC", address(this)), 10 ether);
+        assertEq(vat.gem("USDC", address(this)), 10 * WAD);
         usdcJoin.exit(address(this), 4 * 10 ** 6);
         assertEq(usdc.balanceOf(address(this)), 94 * 10 ** 6);
         assertEq(usdc.balanceOf(address(usdcJoin)), 6 * 10 ** 6);
-        assertEq(vat.gem("USDC", address(this)), 6 ether);
+        assertEq(vat.gem("USDC", address(this)), 6 * WAD);
     }
 
     function testGemJoin5_WBTC() public {
@@ -419,11 +419,11 @@ contract GemJoinTest is DSTest {
         assertEq(vat.gem("WBTC", address(this)), 0);
         wbtcJoin.join(address(this), 10 * 10 ** 8);
         assertEq(wbtc.balanceOf(address(wbtcJoin)), 10 * 10 ** 8);
-        assertEq(vat.gem("WBTC", address(this)), 10 ether);
+        assertEq(vat.gem("WBTC", address(this)), 10 * WAD);
         wbtcJoin.exit(address(this), 4 * 10 ** 8);
         assertEq(wbtc.balanceOf(address(this)), 94 * 10 ** 8);
         assertEq(wbtc.balanceOf(address(wbtcJoin)), 6 * 10 ** 8);
-        assertEq(vat.gem("WBTC", address(this)), 6 ether);
+        assertEq(vat.gem("WBTC", address(this)), 6 * WAD);
     }
 
     function testGemJoin6_TUSD() public {
@@ -433,16 +433,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(tusdJoin));
 
         tusd.approve(address(tusdJoin), uint256(-1));
-        assertEq(tusd.balanceOf(address(this)), 100 ether);
+        assertEq(tusd.balanceOf(address(this)), 100 * WAD);
         assertEq(tusd.balanceOf(address(tusdJoin)), 0);
         assertEq(vat.gem("TUSD", address(this)), 0);
-        tusdJoin.join(address(this), 10 ether);
-        assertEq(tusd.balanceOf(address(tusdJoin)), 10 ether);
-        assertEq(vat.gem("TUSD", address(this)), 10 ether);
-        tusdJoin.exit(address(this), 4 ether);
-        assertEq(tusd.balanceOf(address(this)), 94 ether);
-        assertEq(tusd.balanceOf(address(tusdJoin)), 6 ether);
-        assertEq(vat.gem("TUSD", address(this)), 6 ether);
+        tusdJoin.join(address(this), 10 * WAD);
+        assertEq(tusd.balanceOf(address(tusdJoin)), 10 * WAD);
+        assertEq(vat.gem("TUSD", address(this)), 10 * WAD);
+        tusdJoin.exit(address(this), 4 * WAD);
+        assertEq(tusd.balanceOf(address(this)), 94 * WAD);
+        assertEq(tusd.balanceOf(address(tusdJoin)), 6 * WAD);
+        assertEq(vat.gem("TUSD", address(this)), 6 * WAD);
     }
 
     function testGemJoin_KNC() public {
@@ -452,16 +452,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(kncJoin));
 
         knc.approve(address(kncJoin), uint256(-1));
-        assertEq(knc.balanceOf(address(this)), 100 ether);
+        assertEq(knc.balanceOf(address(this)), 100 * WAD);
         assertEq(knc.balanceOf(address(kncJoin)), 0);
         assertEq(vat.gem("KNC", address(this)), 0);
-        kncJoin.join(address(this), 10 ether);
-        assertEq(knc.balanceOf(address(kncJoin)), 10 ether);
-        assertEq(vat.gem("KNC", address(this)), 10 ether);
-        kncJoin.exit(address(this), 4 ether);
-        assertEq(knc.balanceOf(address(this)), 94 ether);
-        assertEq(knc.balanceOf(address(kncJoin)), 6 ether);
-        assertEq(vat.gem("KNC", address(this)), 6 ether);
+        kncJoin.join(address(this), 10 * WAD);
+        assertEq(knc.balanceOf(address(kncJoin)), 10 * WAD);
+        assertEq(vat.gem("KNC", address(this)), 10 * WAD);
+        kncJoin.exit(address(this), 4 * WAD);
+        assertEq(knc.balanceOf(address(this)), 94 * WAD);
+        assertEq(knc.balanceOf(address(kncJoin)), 6 * WAD);
+        assertEq(vat.gem("KNC", address(this)), 6 * WAD);
     }
 
     function testGemJoin_MANA() public {
@@ -471,16 +471,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(manaJoin));
 
         mana.approve(address(manaJoin), uint256(-1));
-        assertEq(mana.balanceOf(address(this)), 100 ether);
+        assertEq(mana.balanceOf(address(this)), 100 * WAD);
         assertEq(mana.balanceOf(address(manaJoin)), 0);
         assertEq(vat.gem("MANA", address(this)), 0);
-        manaJoin.join(address(this), 10 ether);
-        assertEq(mana.balanceOf(address(manaJoin)), 10 ether);
-        assertEq(vat.gem("MANA", address(this)), 10 ether);
-        manaJoin.exit(address(this), 4 ether);
-        assertEq(mana.balanceOf(address(this)), 94 ether);
-        assertEq(mana.balanceOf(address(manaJoin)), 6 ether);
-        assertEq(vat.gem("MANA", address(this)), 6 ether);
+        manaJoin.join(address(this), 10 * WAD);
+        assertEq(mana.balanceOf(address(manaJoin)), 10 * WAD);
+        assertEq(vat.gem("MANA", address(this)), 10 * WAD);
+        manaJoin.exit(address(this), 4 * WAD);
+        assertEq(mana.balanceOf(address(this)), 94 * WAD);
+        assertEq(mana.balanceOf(address(manaJoin)), 6 * WAD);
+        assertEq(vat.gem("MANA", address(this)), 6 * WAD);
     }
 
     function testGemJoin7_USDT() public {
@@ -495,11 +495,11 @@ contract GemJoinTest is DSTest {
         assertEq(vat.gem("USDT", address(this)), 0);
         usdtJoin.join(address(this), 10 * 10 ** 6);
         assertEq(usdt.balanceOf(address(usdtJoin)), 10 * 10 ** 6);
-        assertEq(vat.gem("USDT", address(this)), 10 ether);
+        assertEq(vat.gem("USDT", address(this)), 10 * WAD);
         usdtJoin.exit(address(this), 4 * 10 ** 6);
         assertEq(usdt.balanceOf(address(this)), 94 * 10 ** 6);
         assertEq(usdt.balanceOf(address(usdtJoin)), 6 * 10 ** 6);
-        assertEq(vat.gem("USDT", address(this)), 6 ether);
+        assertEq(vat.gem("USDT", address(this)), 6 * WAD);
     }
 
     function testGemJoin_PAXUSD() public {
@@ -509,16 +509,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(paxusdJoin));
 
         paxusd.approve(address(paxusdJoin), uint256(-1));
-        assertEq(paxusd.balanceOf(address(this)), 100 ether);
+        assertEq(paxusd.balanceOf(address(this)), 100 * WAD);
         assertEq(paxusd.balanceOf(address(paxusdJoin)), 0);
         assertEq(vat.gem("PAXUSD", address(this)), 0);
-        paxusdJoin.join(address(this), 10 ether);
-        assertEq(paxusd.balanceOf(address(paxusdJoin)), 10 ether);
-        assertEq(vat.gem("PAXUSD", address(this)), 10 ether);
-        paxusdJoin.exit(address(this), 4 ether);
-        assertEq(paxusd.balanceOf(address(this)), 94 ether);
-        assertEq(paxusd.balanceOf(address(paxusdJoin)), 6 ether);
-        assertEq(vat.gem("PAXUSD", address(this)), 6 ether);
+        paxusdJoin.join(address(this), 10 * WAD);
+        assertEq(paxusd.balanceOf(address(paxusdJoin)), 10 * WAD);
+        assertEq(vat.gem("PAXUSD", address(this)), 10 * WAD);
+        paxusdJoin.exit(address(this), 4 * WAD);
+        assertEq(paxusd.balanceOf(address(this)), 94 * WAD);
+        assertEq(paxusd.balanceOf(address(paxusdJoin)), 6 * WAD);
+        assertEq(vat.gem("PAXUSD", address(this)), 6 * WAD);
     }
 
     function testGemJoin_COMP() public {
@@ -528,16 +528,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(compJoin));
 
         comp.approve(address(compJoin), uint256(-1));
-        assertEq(comp.balanceOf(address(this)), 100 ether);
+        assertEq(comp.balanceOf(address(this)), 100 * WAD);
         assertEq(comp.balanceOf(address(compJoin)), 0);
         assertEq(vat.gem("COMP", address(this)), 0);
-        compJoin.join(address(this), 10 ether);
-        assertEq(comp.balanceOf(address(compJoin)), 10 ether);
-        assertEq(vat.gem("COMP", address(this)), 10 ether);
-        compJoin.exit(address(this), 4 ether);
-        assertEq(comp.balanceOf(address(this)), 94 ether);
-        assertEq(comp.balanceOf(address(compJoin)), 6 ether);
-        assertEq(vat.gem("COMP", address(this)), 6 ether);
+        compJoin.join(address(this), 10 * WAD);
+        assertEq(comp.balanceOf(address(compJoin)), 10 * WAD);
+        assertEq(vat.gem("COMP", address(this)), 10 * WAD);
+        compJoin.exit(address(this), 4 * WAD);
+        assertEq(comp.balanceOf(address(this)), 94 * WAD);
+        assertEq(comp.balanceOf(address(compJoin)), 6 * WAD);
+        assertEq(vat.gem("COMP", address(this)), 6 * WAD);
     }
 
     function testGemJoin_UNI() public {
@@ -547,16 +547,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(uniJoin));
 
         uni.approve(address(uniJoin), uint256(-1));
-        assertEq(uni.balanceOf(address(this)), 100 ether);
+        assertEq(uni.balanceOf(address(this)), 100 * WAD);
         assertEq(uni.balanceOf(address(uniJoin)), 0);
         assertEq(vat.gem("UNI", address(this)), 0);
-        uniJoin.join(address(this), 10 ether);
-        assertEq(uni.balanceOf(address(uniJoin)), 10 ether);
-        assertEq(vat.gem("UNI", address(this)), 10 ether);
-        uniJoin.exit(address(this), 4 ether);
-        assertEq(uni.balanceOf(address(this)), 94 ether);
-        assertEq(uni.balanceOf(address(uniJoin)), 6 ether);
-        assertEq(vat.gem("UNI", address(this)), 6 ether);
+        uniJoin.join(address(this), 10 * WAD);
+        assertEq(uni.balanceOf(address(uniJoin)), 10 * WAD);
+        assertEq(vat.gem("UNI", address(this)), 10 * WAD);
+        uniJoin.exit(address(this), 4 * WAD);
+        assertEq(uni.balanceOf(address(this)), 94 * WAD);
+        assertEq(uni.balanceOf(address(uniJoin)), 6 * WAD);
+        assertEq(vat.gem("UNI", address(this)), 6 * WAD);
     }
 
     function testGemJoin_AAVE() public {
@@ -604,16 +604,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(lrcJoin));
 
         lrc.approve(address(lrcJoin), uint256(-1));
-        assertEq(lrc.balanceOf(address(this)), 100 ether);
+        assertEq(lrc.balanceOf(address(this)), 100 * WAD);
         assertEq(lrc.balanceOf(address(lrcJoin)), 0);
         assertEq(vat.gem("LRC", address(this)), 0);
-        lrcJoin.join(address(this), 10 ether);
-        assertEq(lrc.balanceOf(address(lrcJoin)), 10 ether);
-        assertEq(vat.gem("LRC", address(this)), 10 ether);
-        lrcJoin.exit(address(this), 4 ether);
-        assertEq(lrc.balanceOf(address(this)), 94 ether);
-        assertEq(lrc.balanceOf(address(lrcJoin)), 6 ether);
-        assertEq(vat.gem("LRC", address(this)), 6 ether);
+        lrcJoin.join(address(this), 10 * WAD);
+        assertEq(lrc.balanceOf(address(lrcJoin)), 10 * WAD);
+        assertEq(vat.gem("LRC", address(this)), 10 * WAD);
+        lrcJoin.exit(address(this), 4 * WAD);
+        assertEq(lrc.balanceOf(address(this)), 94 * WAD);
+        assertEq(lrc.balanceOf(address(lrcJoin)), 6 * WAD);
+        assertEq(vat.gem("LRC", address(this)), 6 * WAD);
     }
 
     function testGemJoin_LINK() public {
@@ -623,16 +623,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(linkJoin));
 
         link.approve(address(linkJoin), uint256(-1));
-        assertEq(link.balanceOf(address(this)), 100 ether);
+        assertEq(link.balanceOf(address(this)), 100 * WAD);
         assertEq(link.balanceOf(address(linkJoin)), 0);
         assertEq(vat.gem("LINK", address(this)), 0);
-        linkJoin.join(address(this), 10 ether);
-        assertEq(link.balanceOf(address(linkJoin)), 10 ether);
-        assertEq(vat.gem("LINK", address(this)), 10 ether);
-        linkJoin.exit(address(this), 4 ether);
-        assertEq(link.balanceOf(address(this)), 94 ether);
-        assertEq(link.balanceOf(address(linkJoin)), 6 ether);
-        assertEq(vat.gem("LINK", address(this)), 6 ether);
+        linkJoin.join(address(this), 10 * WAD);
+        assertEq(link.balanceOf(address(linkJoin)), 10 * WAD);
+        assertEq(vat.gem("LINK", address(this)), 10 * WAD);
+        linkJoin.exit(address(this), 4 * WAD);
+        assertEq(link.balanceOf(address(this)), 94 * WAD);
+        assertEq(link.balanceOf(address(linkJoin)), 6 * WAD);
+        assertEq(vat.gem("LINK", address(this)), 6 * WAD);
     }
 
     function testGemJoin_BAL() public {
@@ -642,16 +642,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(balJoin));
 
         bal.approve(address(balJoin), uint256(-1));
-        assertEq(bal.balanceOf(address(this)), 100 ether);
+        assertEq(bal.balanceOf(address(this)), 100 * WAD);
         assertEq(bal.balanceOf(address(balJoin)), 0);
         assertEq(vat.gem("BAL", address(this)), 0);
-        balJoin.join(address(this), 10 ether);
-        assertEq(bal.balanceOf(address(balJoin)), 10 ether);
-        assertEq(vat.gem("BAL", address(this)), 10 ether);
-        balJoin.exit(address(this), 4 ether);
-        assertEq(bal.balanceOf(address(this)), 94 ether);
-        assertEq(bal.balanceOf(address(balJoin)), 6 ether);
-        assertEq(vat.gem("BAL", address(this)), 6 ether);
+        balJoin.join(address(this), 10 * WAD);
+        assertEq(bal.balanceOf(address(balJoin)), 10 * WAD);
+        assertEq(vat.gem("BAL", address(this)), 10 * WAD);
+        balJoin.exit(address(this), 4 * WAD);
+        assertEq(bal.balanceOf(address(this)), 94 * WAD);
+        assertEq(bal.balanceOf(address(balJoin)), 6 * WAD);
+        assertEq(vat.gem("BAL", address(this)), 6 * WAD);
     }
 
     function testGemJoin_YFI() public {
@@ -661,16 +661,16 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(yfiJoin));
 
         yfi.approve(address(yfiJoin), uint256(-1));
-        assertEq(yfi.balanceOf(address(this)), 100 ether);
+        assertEq(yfi.balanceOf(address(this)), 100 * WAD);
         assertEq(yfi.balanceOf(address(yfiJoin)), 0);
         assertEq(vat.gem("YFI", address(this)), 0);
-        yfiJoin.join(address(this), 10 ether);
-        assertEq(yfi.balanceOf(address(yfiJoin)), 10 ether);
-        assertEq(vat.gem("YFI", address(this)), 10 ether);
-        yfiJoin.exit(address(this), 4 ether);
-        assertEq(yfi.balanceOf(address(this)), 94 ether);
-        assertEq(yfi.balanceOf(address(yfiJoin)), 6 ether);
-        assertEq(vat.gem("YFI", address(this)), 6 ether);
+        yfiJoin.join(address(this), 10 * WAD);
+        assertEq(yfi.balanceOf(address(yfiJoin)), 10 * WAD);
+        assertEq(vat.gem("YFI", address(this)), 10 * WAD);
+        yfiJoin.exit(address(this), 4 * WAD);
+        assertEq(yfi.balanceOf(address(this)), 94 * WAD);
+        assertEq(yfi.balanceOf(address(yfiJoin)), 6 * WAD);
+        assertEq(vat.gem("YFI", address(this)), 6 * WAD);
     }
 
     function testGemJoin8_GUSD() public {
@@ -690,11 +690,11 @@ contract GemJoinTest is DSTest {
         assertEq(vat.gem("GUSD", address(this)), 0);
         gusdJoin.join(address(this), 10 * 10 ** 2);
         assertEq(gusd.balanceOf(address(gusdJoin)), 10 * 10 ** 2);
-        assertEq(vat.gem("GUSD", address(this)), 10 ether);
+        assertEq(vat.gem("GUSD", address(this)), 10 * WAD);
         gusdJoin.exit(address(this), 4 * 10 ** 2);
         assertEq(gusd.balanceOf(address(this)), 94 * 10 ** 2);
         assertEq(gusd.balanceOf(address(gusdJoin)), 6 * 10 ** 2);
-        assertEq(vat.gem("GUSD", address(this)), 6 ether);
+        assertEq(vat.gem("GUSD", address(this)), 6 * WAD);
     }
 
     function testGemJoin_PAXG() public {
@@ -730,11 +730,11 @@ contract GemJoinTest is DSTest {
         assertEq(vat.gem("RENBTC", address(this)), 0);
         renbtcJoin.join(address(this), 10 * 10 ** 8);
         assertEq(renbtc.balanceOf(address(renbtcJoin)), 10 * 10 ** 8);
-        assertEq(vat.gem("RENBTC", address(this)), 10 ether);
+        assertEq(vat.gem("RENBTC", address(this)), 10 * WAD);
         renbtcJoin.exit(address(this), 4 * 10 ** 8);
         assertEq(renbtc.balanceOf(address(this)), 94 * 10 ** 8);
         assertEq(renbtc.balanceOf(address(renbtcJoin)), 6 * 10 ** 8);
-        assertEq(vat.gem("RENBTC", address(this)), 6 ether);
+        assertEq(vat.gem("RENBTC", address(this)), 6 * WAD);
     }
 
     function testFailGemJoin6Join() public {
@@ -743,12 +743,12 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(tusdJoin));
 
         tusd.approve(address(tusdJoin), uint256(-1));
-        assertEq(tusd.balanceOf(address(this)), 100 ether);
+        assertEq(tusd.balanceOf(address(this)), 100 * WAD);
         assertEq(tusd.balanceOf(address(tusdJoin)), 0);
         assertEq(vat.gem("TUSD", address(this)), 0);
         tusd.setImplementation(0xCB9a11afDC6bDb92E4A6235959455F28758b34bA);
         // Fail here
-        tusdJoin.join(address(this), 10 ether);
+        tusdJoin.join(address(this), 10 * WAD);
     }
 
     function testFailGemJoin6Exit() public {
@@ -757,10 +757,10 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(tusdJoin));
 
         tusd.approve(address(tusdJoin), uint256(-1));
-        tusdJoin.join(address(this), 10 ether);
+        tusdJoin.join(address(this), 10 * WAD);
         tusd.setImplementation(0xCB9a11afDC6bDb92E4A6235959455F28758b34bA);
         // Fail here
-        tusdJoin.exit(address(this), 10 ether);
+        tusdJoin.exit(address(this), 10 * WAD);
     }
 
     function testFailGemJoin7JoinWad() public {
@@ -770,7 +770,7 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(usdtJoin));
 
         // Fail here
-        usdtJoin.join(address(this), 10 ether);
+        usdtJoin.join(address(this), 10 * WAD);
     }
 
     function testFailGemJoin7ExitWad() public {
@@ -781,7 +781,7 @@ contract GemJoinTest is DSTest {
 
         usdtJoin.join(address(this), 10 * 10 ** 6);
         // Fail here
-        usdtJoin.exit(address(this), 10 ether);
+        usdtJoin.exit(address(this), 10 * WAD);
     }
 
     function testFailGemJoin7Join() public {
@@ -865,7 +865,7 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(gusdJoin));
 
         // Fail here
-        gusdJoin.join(address(this), 10 ether);
+        gusdJoin.join(address(this), 10 * WAD);
     }
 
     function testFailGemJoin8ExitWad() public {
@@ -881,7 +881,7 @@ contract GemJoinTest is DSTest {
 
         gusdJoin.join(address(this), 10 * 10 ** 2);
         // Fail here
-        gusdJoin.exit(address(this), 10 ether);
+        gusdJoin.exit(address(this), 10 * WAD);
     }
 
     function testFailGemJoin8Join() public {
@@ -927,7 +927,7 @@ contract GemJoinTest is DSTest {
 
         paxg.approve(address(paxgJoin), uint256(-1));
         // Fail here
-        paxgJoin.join(address(this), 1000 ether);
+        paxgJoin.join(address(this), 1000 * WAD);
     }
 
     function testFailGemJoin9ExitWad() public {
@@ -938,7 +938,7 @@ contract GemJoinTest is DSTest {
         paxg.approve(address(paxgJoin), uint256(-1));
         paxgJoin.join(address(this), 10 * 10 ** 18);
         // Fail here
-        paxgJoin.exit(address(this), 100 ether);
+        paxgJoin.exit(address(this), 100 * WAD);
     }
 
     function testGemJoin9JoinFee() public {
@@ -1017,7 +1017,7 @@ contract GemJoinTest is DSTest {
         wbtc.approve(address(wbtcJoin), uint256(-1));
 
         // Fail here
-        wbtcJoin.join(address(this), 10 ether);
+        wbtcJoin.join(address(this), 10 * WAD);
     }
 
     function testFailManagedGemJoinExitWad() public {
@@ -1028,7 +1028,7 @@ contract GemJoinTest is DSTest {
         wbtc.approve(address(wbtcJoin), uint256(-1));
         wbtcJoin.join(address(this), 10 * 10 ** 8);
         // Fail here
-        wbtcJoin.exit(address(this), address(this), 10 ether);
+        wbtcJoin.exit(address(this), address(this), 10 * WAD);
     }
 
     function testFailManagedGemJoinJoin() public {
@@ -1223,15 +1223,15 @@ contract GemJoinTest is DSTest {
         giveAuth(address(vat), address(wstethJoin));
 
         wsteth.approve(address(wstethJoin), uint256(-1));
-        assertEq(wsteth.balanceOf(address(this)), 100 ether);
+        assertEq(wsteth.balanceOf(address(this)), 100 * WAD);
         assertEq(wsteth.balanceOf(address(wstethJoin)), 0);
         assertEq(vat.gem("WSTETH", address(this)), 0);
-        wstethJoin.join(address(this), 10 ether);
-        assertEq(wsteth.balanceOf(address(wstethJoin)), 10 ether);
-        assertEq(vat.gem("WSTETH", address(this)), 10 ether);
-        wstethJoin.exit(address(this), 4 ether);
-        assertEq(wsteth.balanceOf(address(this)), 94 ether);
-        assertEq(wsteth.balanceOf(address(wstethJoin)), 6 ether);
-        assertEq(vat.gem("WSTETH", address(this)), 6 ether);
+        wstethJoin.join(address(this), 10 * WAD);
+        assertEq(wsteth.balanceOf(address(wstethJoin)), 10 * WAD);
+        assertEq(vat.gem("WSTETH", address(this)), 10 * WAD);
+        wstethJoin.exit(address(this), 4 * WAD);
+        assertEq(wsteth.balanceOf(address(this)), 94 * WAD);
+        assertEq(wsteth.balanceOf(address(wstethJoin)), 6 * WAD);
+        assertEq(vat.gem("WSTETH", address(this)), 6 * WAD);
     }
 }
