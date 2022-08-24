@@ -284,8 +284,8 @@ contract GemJoinTest is DSTest {
         assertEq(rep.balanceOf(address(repJoin)), 0);
         assertEq(vat.gem("REP", address(this)), 0);
         repJoin.join(address(this), 10 * WAD);
-        assertEq(rep.balanceOf(address(repJoin)), 10 * WAD);
         assertEq(rep.balanceOf(address(this)), 90 * WAD);
+        assertEq(rep.balanceOf(address(repJoin)), 10 * WAD);
         assertEq(vat.gem("REP", address(this)), 10 * WAD);
         repJoin.exit(address(this), 4 * WAD);
         assertEq(rep.balanceOf(address(this)), 94 * WAD);
@@ -304,8 +304,8 @@ contract GemJoinTest is DSTest {
         assertEq(zrx.balanceOf(address(zrxJoin)), 0);
         assertEq(vat.gem("ZRX", address(this)), 0);
         zrxJoin.join(address(this), 10 * WAD);
-        assertEq(zrx.balanceOf(address(zrxJoin)), 10 * WAD);
         assertEq(zrx.balanceOf(address(this)), 90 * WAD);
+        assertEq(zrx.balanceOf(address(zrxJoin)), 10 * WAD);
         assertEq(vat.gem("ZRX", address(this)), 10 * WAD);
         zrxJoin.exit(address(this), 4 * WAD);
         assertEq(zrx.balanceOf(address(this)), 94 * WAD);
@@ -324,8 +324,8 @@ contract GemJoinTest is DSTest {
         assertEq(omg.balanceOf(address(omgJoin)), 0);
         assertEq(vat.gem("OMG", address(this)), 0);
         omgJoin.join(address(this), 10 * WAD);
-        assertEq(omg.balanceOf(address(omgJoin)), 10 * WAD);
         assertEq(omg.balanceOf(address(this)), 90 * WAD);
+        assertEq(omg.balanceOf(address(omgJoin)), 10 * WAD);
         assertEq(vat.gem("OMG", address(this)), 10 * WAD);
         omgJoin.exit(address(this), 4 * WAD);
         assertEq(omg.balanceOf(address(this)), 94 * WAD);
@@ -344,8 +344,8 @@ contract GemJoinTest is DSTest {
         assertEq(bat.balanceOf(address(batJoin)), 0);
         assertEq(vat.gem("BAT", address(this)), 0);
         batJoin.join(address(this), 10 * WAD);
-        assertEq(bat.balanceOf(address(batJoin)), 10 * WAD);
         assertEq(bat.balanceOf(address(this)), 90 * WAD);
+        assertEq(bat.balanceOf(address(batJoin)), 10 * WAD);
         assertEq(vat.gem("BAT", address(this)), 10 * WAD);
         batJoin.exit(address(this), 4 * WAD);
         assertEq(bat.balanceOf(address(this)), 94 * WAD);
@@ -364,8 +364,8 @@ contract GemJoinTest is DSTest {
         assertEq(dgd.balanceOf(address(dgdJoin)), 0);
         assertEq(vat.gem("DGD", address(this)), 0);
         dgdJoin.join(address(this), 10 * 10 ** 9);
-        assertEq(dgd.balanceOf(address(dgdJoin)), 10 * 10 ** 9);
         assertEq(dgd.balanceOf(address(this)), 90 * 10 ** 9);
+        assertEq(dgd.balanceOf(address(dgdJoin)), 10 * 10 ** 9);
         assertEq(vat.gem("DGD", address(this)), 10 * WAD);
         dgdJoin.exit(address(this), 4 * 10 ** 9);
         assertEq(dgd.balanceOf(address(this)), 94 * 10 ** 9);
@@ -385,8 +385,8 @@ contract GemJoinTest is DSTest {
         address bag = gntJoin.make();
         gnt.transfer(bag, 10 * WAD);
         gntJoin.join(address(this), 10 * WAD);
-        assertEq(gnt.balanceOf(address(gntJoin)), 10 * WAD);
         assertEq(gnt.balanceOf(address(this)), 90 * WAD);
+        assertEq(gnt.balanceOf(address(gntJoin)), 10 * WAD);
         assertEq(vat.gem("GNT", address(this)), 10 * WAD);
         gntJoin.exit(address(this), 4 * WAD);
         assertEq(gnt.balanceOf(address(this)), 94 * WAD);
@@ -405,8 +405,8 @@ contract GemJoinTest is DSTest {
         assertEq(usdc.balanceOf(address(usdcJoin)), 0);
         assertEq(vat.gem("USDC", address(this)), 0);
         usdcJoin.join(address(this), 10 * 10 ** 6);
-        assertEq(usdc.balanceOf(address(usdcJoin)), 10 * 10 ** 6);
         assertEq(usdc.balanceOf(address(this)), 90 * 10 ** 6);
+        assertEq(usdc.balanceOf(address(usdcJoin)), 10 * 10 ** 6);
         assertEq(vat.gem("USDC", address(this)), 10 * WAD);
         usdcJoin.exit(address(this), 4 * 10 ** 6);
         assertEq(usdc.balanceOf(address(this)), 94 * 10 ** 6);
@@ -425,8 +425,8 @@ contract GemJoinTest is DSTest {
         assertEq(wbtc.balanceOf(address(wbtcJoin)), 0);
         assertEq(vat.gem("WBTC", address(this)), 0);
         wbtcJoin.join(address(this), 10 * 10 ** 8);
-        assertEq(wbtc.balanceOf(address(wbtcJoin)), 10 * 10 ** 8);
         assertEq(wbtc.balanceOf(address(this)), 90 * 10 ** 8);
+        assertEq(wbtc.balanceOf(address(wbtcJoin)), 10 * 10 ** 8);
         assertEq(vat.gem("WBTC", address(this)), 10 * WAD);
         wbtcJoin.exit(address(this), 4 * 10 ** 8);
         assertEq(wbtc.balanceOf(address(this)), 94 * 10 ** 8);
@@ -445,8 +445,8 @@ contract GemJoinTest is DSTest {
         assertEq(tusd.balanceOf(address(tusdJoin)), 0);
         assertEq(vat.gem("TUSD", address(this)), 0);
         tusdJoin.join(address(this), 10 * WAD);
-        assertEq(tusd.balanceOf(address(tusdJoin)), 10 * WAD);
         assertEq(tusd.balanceOf(address(this)), 90 * WAD);
+        assertEq(tusd.balanceOf(address(tusdJoin)), 10 * WAD);
         assertEq(vat.gem("TUSD", address(this)), 10 * WAD);
         tusdJoin.exit(address(this), 4 * WAD);
         assertEq(tusd.balanceOf(address(this)), 94 * WAD);
@@ -465,8 +465,8 @@ contract GemJoinTest is DSTest {
         assertEq(knc.balanceOf(address(kncJoin)), 0);
         assertEq(vat.gem("KNC", address(this)), 0);
         kncJoin.join(address(this), 10 * WAD);
-        assertEq(knc.balanceOf(address(kncJoin)), 10 * WAD);
         assertEq(knc.balanceOf(address(this)), 90 * WAD);
+        assertEq(knc.balanceOf(address(kncJoin)), 10 * WAD);
         assertEq(vat.gem("KNC", address(this)), 10 * WAD);
         kncJoin.exit(address(this), 4 * WAD);
         assertEq(knc.balanceOf(address(this)), 94 * WAD);
@@ -485,8 +485,8 @@ contract GemJoinTest is DSTest {
         assertEq(mana.balanceOf(address(manaJoin)), 0);
         assertEq(vat.gem("MANA", address(this)), 0);
         manaJoin.join(address(this), 10 * WAD);
-        assertEq(mana.balanceOf(address(manaJoin)), 10 * WAD);
         assertEq(mana.balanceOf(address(this)), 90 * WAD);
+        assertEq(mana.balanceOf(address(manaJoin)), 10 * WAD);
         assertEq(vat.gem("MANA", address(this)), 10 * WAD);
         manaJoin.exit(address(this), 4 * WAD);
         assertEq(mana.balanceOf(address(this)), 94 * WAD);
@@ -505,8 +505,8 @@ contract GemJoinTest is DSTest {
         assertEq(usdt.balanceOf(address(usdtJoin)), 0);
         assertEq(vat.gem("USDT", address(this)), 0);
         usdtJoin.join(address(this), 10 * 10 ** 6);
-        assertEq(usdt.balanceOf(address(usdtJoin)), 10 * 10 ** 6);
         assertEq(usdt.balanceOf(address(this)), 90 * 10 ** 6);
+        assertEq(usdt.balanceOf(address(usdtJoin)), 10 * 10 ** 6);
         assertEq(vat.gem("USDT", address(this)), 10 * WAD);
         usdtJoin.exit(address(this), 4 * 10 ** 6);
         assertEq(usdt.balanceOf(address(this)), 94 * 10 ** 6);
@@ -525,8 +525,8 @@ contract GemJoinTest is DSTest {
         assertEq(paxusd.balanceOf(address(paxusdJoin)), 0);
         assertEq(vat.gem("PAXUSD", address(this)), 0);
         paxusdJoin.join(address(this), 10 * WAD);
-        assertEq(paxusd.balanceOf(address(paxusdJoin)), 10 * WAD);
         assertEq(paxusd.balanceOf(address(this)), 90 * WAD);
+        assertEq(paxusd.balanceOf(address(paxusdJoin)), 10 * WAD);
         assertEq(vat.gem("PAXUSD", address(this)), 10 * WAD);
         paxusdJoin.exit(address(this), 4 * WAD);
         assertEq(paxusd.balanceOf(address(this)), 94 * WAD);
@@ -545,8 +545,8 @@ contract GemJoinTest is DSTest {
         assertEq(comp.balanceOf(address(compJoin)), 0);
         assertEq(vat.gem("COMP", address(this)), 0);
         compJoin.join(address(this), 10 * WAD);
-        assertEq(comp.balanceOf(address(compJoin)), 10 * WAD);
         assertEq(comp.balanceOf(address(this)), 90 * WAD);
+        assertEq(comp.balanceOf(address(compJoin)), 10 * WAD);
         assertEq(vat.gem("COMP", address(this)), 10 * WAD);
         compJoin.exit(address(this), 4 * WAD);
         assertEq(comp.balanceOf(address(this)), 94 * WAD);
@@ -565,8 +565,8 @@ contract GemJoinTest is DSTest {
         assertEq(uni.balanceOf(address(uniJoin)), 0);
         assertEq(vat.gem("UNI", address(this)), 0);
         uniJoin.join(address(this), 10 * WAD);
-        assertEq(uni.balanceOf(address(uniJoin)), 10 * WAD);
         assertEq(uni.balanceOf(address(this)), 90 * WAD);
+        assertEq(uni.balanceOf(address(uniJoin)), 10 * WAD);
         assertEq(vat.gem("UNI", address(this)), 10 * WAD);
         uniJoin.exit(address(this), 4 * WAD);
         assertEq(uni.balanceOf(address(this)), 94 * WAD);
@@ -585,8 +585,8 @@ contract GemJoinTest is DSTest {
         assertEq(aave.balanceOf(address(aaveJoin)), 0);
         assertEq(vat.gem("AAVE", address(this)), 0);
         aaveJoin.join(address(this), 10 * WAD);
-        assertEq(aave.balanceOf(address(aaveJoin)), 10 * WAD);
         assertEq(aave.balanceOf(address(this)), 90 * WAD);
+        assertEq(aave.balanceOf(address(aaveJoin)), 10 * WAD);
         assertEq(vat.gem("AAVE", address(this)), 10 * WAD);
         aaveJoin.exit(address(this), 4 * WAD);
         assertEq(aave.balanceOf(address(this)), 94 * WAD);
@@ -605,8 +605,8 @@ contract GemJoinTest is DSTest {
         assertEq(matic.balanceOf(address(maticJoin)), 0);
         assertEq(vat.gem("MATIC", address(this)), 0);
         maticJoin.join(address(this), 10 * WAD);
-        assertEq(matic.balanceOf(address(maticJoin)), 10 * WAD);
         assertEq(matic.balanceOf(address(this)), 90 * WAD);
+        assertEq(matic.balanceOf(address(maticJoin)), 10 * WAD);
         assertEq(vat.gem("MATIC", address(this)), 10 * WAD);
         maticJoin.exit(address(this), 4 * WAD);
         assertEq(matic.balanceOf(address(this)), 94 * WAD);
@@ -625,8 +625,8 @@ contract GemJoinTest is DSTest {
         assertEq(lrc.balanceOf(address(lrcJoin)), 0);
         assertEq(vat.gem("LRC", address(this)), 0);
         lrcJoin.join(address(this), 10 * WAD);
-        assertEq(lrc.balanceOf(address(lrcJoin)), 10 * WAD);
         assertEq(lrc.balanceOf(address(this)), 90 * WAD);
+        assertEq(lrc.balanceOf(address(lrcJoin)), 10 * WAD);
         assertEq(vat.gem("LRC", address(this)), 10 * WAD);
         lrcJoin.exit(address(this), 4 * WAD);
         assertEq(lrc.balanceOf(address(this)), 94 * WAD);
@@ -665,8 +665,8 @@ contract GemJoinTest is DSTest {
         assertEq(bal.balanceOf(address(balJoin)), 0);
         assertEq(vat.gem("BAL", address(this)), 0);
         balJoin.join(address(this), 10 * WAD);
-        assertEq(bal.balanceOf(address(balJoin)), 10 * WAD);
         assertEq(bal.balanceOf(address(this)), 90 * WAD);
+        assertEq(bal.balanceOf(address(balJoin)), 10 * WAD);
         assertEq(vat.gem("BAL", address(this)), 10 * WAD);
         balJoin.exit(address(this), 4 * WAD);
         assertEq(bal.balanceOf(address(this)), 94 * WAD);
@@ -685,8 +685,8 @@ contract GemJoinTest is DSTest {
         assertEq(yfi.balanceOf(address(yfiJoin)), 0);
         assertEq(vat.gem("YFI", address(this)), 0);
         yfiJoin.join(address(this), 10 * WAD);
-        assertEq(yfi.balanceOf(address(yfiJoin)), 10 * WAD);
         assertEq(yfi.balanceOf(address(this)), 90 * WAD);
+        assertEq(yfi.balanceOf(address(yfiJoin)), 10 * WAD);
         assertEq(vat.gem("YFI", address(this)), 10 * WAD);
         yfiJoin.exit(address(this), 4 * WAD);
         assertEq(yfi.balanceOf(address(this)), 94 * WAD);
@@ -710,8 +710,8 @@ contract GemJoinTest is DSTest {
         assertEq(gusd.balanceOf(address(gusdJoin)), 0);
         assertEq(vat.gem("GUSD", address(this)), 0);
         gusdJoin.join(address(this), 10 * 10 ** 2);
-        assertEq(gusd.balanceOf(address(gusdJoin)), 10 * 10 ** 2);
         assertEq(gusd.balanceOf(address(this)), 90 * 10 ** 2);
+        assertEq(gusd.balanceOf(address(gusdJoin)), 10 * 10 ** 2);
         assertEq(vat.gem("GUSD", address(this)), 10 * WAD);
         gusdJoin.exit(address(this), 4 * 10 ** 2);
         assertEq(gusd.balanceOf(address(this)), 94 * 10 ** 2);
@@ -732,6 +732,7 @@ contract GemJoinTest is DSTest {
         uint256 prevBalanceThis = paxg.balanceOf(address(this));
         uint256 netAmt = 10 * WAD - getFeeFor(10 * WAD);
         uint256 netAmt2 = netAmt - getFeeFor(netAmt);
+        assertEq(paxg.balanceOf(address(this)), 90 * WAD);
         assertEq(paxg.balanceOf(address(paxgJoin)), netAmt);
         assertEq(vat.gem("PAXG", address(this)), netAmt);
         paxgJoin.exit(address(this), netAmt);
@@ -1203,8 +1204,8 @@ contract GemJoinTest is DSTest {
         assertEq(sai.balanceOf(address(saiJoin)), 0);
         assertEq(vat.gem("SAI", address(this)), 0);
         saiJoin.join(address(this), 10 * WAD);
-        assertEq(sai.balanceOf(address(saiJoin)), 10 * WAD);
         assertEq(sai.balanceOf(address(this)), 90 * WAD);
+        assertEq(sai.balanceOf(address(saiJoin)), 10 * WAD);
         assertEq(vat.gem("SAI", address(this)), 10 * WAD);
         saiJoin.deny(address(this)); // Check there is no need of authorization to exit
         saiJoin.exit(address(this), 4 * WAD);
@@ -1232,8 +1233,8 @@ contract GemJoinTest is DSTest {
         assertEq(wbtc.balanceOf(address(wbtcJoin)), 0);
         assertEq(vat.gem("WBTC", address(this)), 0);
         wbtcJoin.join(address(this), 10 * 10 ** 8);
-        assertEq(wbtc.balanceOf(address(wbtcJoin)), 10 * 10 ** 8);
         assertEq(wbtc.balanceOf(address(this)), 90 * 10 ** 8);
+        assertEq(wbtc.balanceOf(address(wbtcJoin)), 10 * 10 ** 8);
         assertEq(vat.gem("WBTC", address(this)), 10 * WAD);
         wbtcJoin.exit(address(this), address(this), 4 * 10 ** 8);
         assertEq(wbtc.balanceOf(address(wbtcJoin)), 6 * 10 ** 8);
@@ -1252,8 +1253,8 @@ contract GemJoinTest is DSTest {
         assertEq(wsteth.balanceOf(address(wstethJoin)), 0);
         assertEq(vat.gem("WSTETH", address(this)), 0);
         wstethJoin.join(address(this), 10 * WAD);
-        assertEq(wsteth.balanceOf(address(wstethJoin)), 10 * WAD);
         assertEq(wsteth.balanceOf(address(this)), 90 * WAD);
+        assertEq(wsteth.balanceOf(address(wstethJoin)), 10 * WAD);
         assertEq(vat.gem("WSTETH", address(this)), 10 * WAD);
         wstethJoin.exit(address(this), 4 * WAD);
         assertEq(wsteth.balanceOf(address(this)), 94 * WAD);
